@@ -1,15 +1,40 @@
 # Kiến trúc dự án
 
-```text
-src/assets # chứa tài nguyên hình ảnh và gif
-src/ui/components # chứa các component UI của dự án cho tất cả các trang
-src/ui/layouts # chứa các layout UI của dự án
-src/pages # chứa các page chứa kiến trúc của các trang trong dự án
-src/pages/Home # chứa kiến trúc của trang Home, bao gồm index cho trang chính và các component liên quan.
-src/router # chứa các router định tuyến
-src/store # chứa các store
-src/utils # chứa các utils
-src/services # chứa các api kết nối BE
-src/types chứa các type dữ liệu
+Dự án gồm hai thành phần chính: Backend (Spring Boot) tại thư mục gốc và Frontend (React + Vite) tại thư mục `client/`.
 
+## 1. Cấu trúc tổng thể
+
+```text
+plantcare/
+├── client/          # Ứng dụng Frontend (React, Vite, TypeScript)
+├── src/             # Mã nguồn Backend (Spring Boot, Java)
+├── docs/            # Tài liệu dự án
+└── pom.xml          # Quản lý build và dependency Maven của Backend
+```
+
+## 2. Cấu trúc Frontend (`client/src`)
+
+```text
+client/src/
+├── assets/          # Tài nguyên tĩnh (hình ảnh, gif, vector)
+├── lang/            # Cấu hình và dữ liệu đa ngôn ngữ
+├── pages/           # Các trang giao diện của ứng dụng (Home, Welcome, ...)
+├── router/          # Cấu hình định tuyến (React Router)
+├── services/        # Tầng gọi API giao tiếp với Backend
+├── store/           # Quản lý state toàn cục
+├── types/           # Định nghĩa các kiểu dữ liệu (TypeScript types/interfaces)
+├── ui/
+│   ├── components/  # Các thành phần giao diện tái sử dụng
+│   └── layouts/     # Các khung giao diện chung (Layout)
+└── utils/           # Các hàm tiện ích hỗ trợ
+```
+
+## 3. Cấu trúc Backend (`src`)
+
+```text
+src/
+├── main/
+│   ├── java/com/plantcare/server/  # Logic nghiệp vụ Backend (Controller, Service, Repository, Model)
+│   └── resources/                  # Cấu hình hệ thống (application.properties) và tài nguyên phụ trợ
+└── test/                           # Mã kiểm thử (Unit test và Integration test)
 ```
